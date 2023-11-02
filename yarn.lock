@@ -5739,7 +5739,7 @@ react-native-linear-gradient@^2.8.3:
 
 react-native-pie-chart@^3.0.1:
   version "3.0.1"
-  resolved "https://registry.npmjs.org/react-native-pie-chart/-/react-native-pie-chart-3.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-pie-chart/-/react-native-pie-chart-3.0.1.tgz#3137daa66452b086cd32128147241e9e08246f79"
   integrity sha512-KJ9z7OqRI1Ryzxr61KanZ4xtLHrQd6CrJwX4QNrYJka9/fej1tUr/tW8uXH/NQdwxrXuFEWXSwwTXIcP2B3wUg==
   dependencies:
     d3-shape "^3.2.0"
