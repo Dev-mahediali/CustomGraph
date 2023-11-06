@@ -1,56 +1,60 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View} from 'react-native';
 import Svg, {Text as SvgText} from 'react-native-svg';
 import {ProgressCircle} from 'react-native-svg-charts';
 
 interface HalfCircleProps {
-  percentage: number;
-  text: string;
   circleColor: string;
-  LowerLabel: string;
+  percentage: number;
 }
 
-const HalfCircle: React.FC<HalfCircleProps> = ({
-  percentage,
-  text,
-  circleColor,
-  LowerLabel,
-}) => {
+const HalfCircle: React.FC<HalfCircleProps> = ({circleColor, percentage}) => {
   return (
     <View>
-      <Svg height={200} width={200}>
+      <Svg height={200} width={225}>
         <ProgressCircle
-          // eslint-disable-next-line react-native/no-inline-styles
           style={{height: 150, width: 200, marginTop: 32}}
-          progress={percentage}
+          progress={((1 / 2) * percentage) / 10}
           progressColor={circleColor}
           startAngle={-Math.PI * 0.5}
           endAngle={Math.PI * 0.5}
-          strokeWidth={14}
+          strokeWidth={18}
           cornerRadius={0}
         />
 
-        <SvgText x={13} y={105} textAnchor="middle" fontSize={12} fill="#000">
+        <SvgText x={10} y={105} textAnchor="middle" fontSize={14} fill="#000">
           0%
         </SvgText>
-        <SvgText x={34} y={55} textAnchor="middle" fontSize={12} fill="#000">
+        <SvgText x={28} y={55} textAnchor="middle" fontSize={14} fill="#000">
           5%
         </SvgText>
-        <SvgText x={100} y={25} textAnchor="middle" fontSize={12} fill="#000">
+        <SvgText x={100} y={22} textAnchor="middle" fontSize={14} fill="#000">
           10%
         </SvgText>
-        <SvgText x={169} y={55} textAnchor="middle" fontSize={12} fill="#000">
+        <SvgText x={178} y={55} textAnchor="middle" fontSize={14} fill="#000">
           15%
         </SvgText>
 
-        <SvgText x={175} y={104} textAnchor="start" fontSize={12}>
-          20%
+        <SvgText
+          x={203}
+          y={105}
+          textAnchor="middle"
+          font-weight={500}
+          fontSize={14}>
+          20% +
         </SvgText>
-        <SvgText x={100} y={80} textAnchor="middle" fontSize={22} fill="#000">
-          {text}
+        <SvgText
+          x={100}
+          y={85}
+          font-style="normal"
+          textAnchor="middle"
+          fontSize={22}
+          fill="#191C1D">
+          {percentage + '%'}
         </SvgText>
-        <SvgText x={100} y={110} textAnchor="middle" fontSize={16} fill="#000">
-          {LowerLabel}
+        <SvgText x={100} y={110} textAnchor="middle" fontSize={14}>
+          12 ha
         </SvgText>
       </Svg>
     </View>
